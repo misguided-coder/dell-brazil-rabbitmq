@@ -1,0 +1,172 @@
+Messaging Architecture
+Role of RabbitMQ
+Differences with other similiar products
+Exchanges
+Queues
+Bindings Keys/Patterns
+Routing Keys
+
+Exchange Features
+Queue Features
+
+Virtual Host
+User/Role Management
+ACL
+Queue Policies
+Exchange Policies
+Clustering Policies
+
+RabbitMQ Plugins
+	Management Plugin
+	Firehose Plugin
+	Mirror Plugin
+	Sovel
+	Federation 
+
+Manage RabbitMQ from UI Dashborad/CLI/Configuration files
+Log Management
+Fine Tuning
+
+RabbitMQ Cluster/HA/Load Balancing/Single Machine Cluster
+
+Multi Machine CLuster Setup (Same Network,No Firewall,Admin Rights)
+
+20% Theory 
+80% Practical
+
+Java Programs
+	Sender
+	Receiver
+
+
+Messaging Architecture
+   Why -----
+	2 parameters
+		1) Client and Server component should be able to 
+		   talk to each other at any cost does not matter
+		   which component is down or up
+		2) Client has sent a request to Server and server 
+		   is processing the request and taking too long 
+                   to respond back to client
+
+Communication Model
+	1) Sync Communication (Send and Wait - Blocking Way)
+	2) Async Communication (Send and Forget - NoN Blocking Way)		
+
+2 Type of Messaging Applications
+	1) PtP Domain - Queue
+	2) PubSub Domain - Topic
+
+RabbitMQ Messageing Architecture
+	
+Exchange -- 
+	has no capabeities to hold message
+	will receive message and simply route it to the corresponding queue
+Queue -- is actual message holder/collector
+Binding -- is the link between queue and exchange (binding key)
+Routing Key -- is set by sender as extra info inside the message
+
+
+Messaging Product
+	JbossMQ
+	WeblogicMQ
+	IBM MQ
+	ActiveMQ 
+	MSMQ
+	
+Routing Product
+	Apache Camel
+	Fuse ESB
+	MuleSoft ESB
+	Spring Integration	
+
+System Requirement for RabbitMQ
+
+Windows 64 with 2-4 GB RAM
+5 GB HD space
+Full Admin Rights
+
+1) Erlang  --- environment variable setup
+2) RabbitMQ --- environment variable setup
+
+Manage RabbitMQ using
+1) UI Dashboard
+2) CLI
+3) Configuration file
+
+
+AMQP
+	Advance Message Queuing Protocol
+
+
+RabbutMQ supports 100+ features but on demand
+
+RabbutMQ initially starts with only 10-20 features
+
+Exchange Types
+1) Direct -- will exacetly match incoming message "routing key" 
+	     with queue "binding key"
+2) Fanout -- will broadcast each message to all bound queues (mindless broadcasting)
+3) Topic  -- will match incoming message "routing key"  
+	     with "binding pattern" of the bound queue
+4) Header 	
+
+
+Small Admin Exercise
+	News       politics	PoliticsNewsQ
+Small Testing Exercise
+	Part 1) Sender - Small Java based program to send around 5 messages to exchange
+	Part 2) Receiver - Small Java based program to receive all the messages from queue as listener
+		Push Model
+
+System Requirements for Java based client
+
+1) Java 8 ---- environment variable setup
+2) Eclipse IDE  
+3) RabbitMQ client jar
+
+Every broker gives 2 guarantees.
+1) Message delivery is guaranteed 100% no matter what.
+2) No message will be delivered twice.
+
+Message Acknowledgement (Receiver concept)
+1) Auto Ack Mode - Broker has acknowledged that message is delivered to receiver
+2) Client Ack Mode - Consumer has to acknowledge manually 
+		     that I received the message by sending 
+                     seperate acknowledgement
+
+
+Topic Exchange Pattern Examples
+* ---- single word
+# ---- no word or multiple words
+
+queue.cars.luxury.* --- binding pattern
+
+queue.#.bikes.* --- binding pattern
+
+queue.# --- binding pattern
+
+# --- binding pattern
+
+routing keys of message 
+	queue.cars.luxury.india
+	queue.cars.luxury.usa
+	queue.cars.luxury.brazil
+	queue.cars.luxury.uk
+
+	queue.cheap.bikes.sports
+	queue.costly.super.bikes.sports
+
+	queue.costly.bikes
+	queue.costly.bikes.india
+	queue.costly.bikes.usa
+
+
+
+	
+
+
+
+
+	
+
