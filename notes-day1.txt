@@ -9,11 +9,12 @@ Routing Keys
 Exchange Features
 Queue Features
 
+Queue Policies
+Exchange Policies
+
 Virtual Host
 User/Role Management
 ACL
-Queue Policies
-Exchange Policies
 Clustering Policies
 
 RabbitMQ Plugins

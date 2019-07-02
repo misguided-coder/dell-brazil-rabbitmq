@@ -1,0 +1,72 @@
+Exchange Types
+1) Direct -- will exacetly match incoming message "routing key" 
+	     with queue "binding key"
+2) Fanout -- will broadcast each message to all bound queues (mindless broadcasting)
+3) Topic  -- will match incoming message "routing key"  
+	     with "binding pattern" of the bound queue
+4) Header -- will route message based on incoming message "header/s" to
+	     corresponding queue which was bound with those headers
+	    
+
+Message Envelope
+	Headers
+		Predefined
+		User defined
+	Body/Payload
+
+
+Exercise 1
+
+ex.news
+
+queue.news.politics.brazil
+queue.news.politics.india
+queue.news.weather
+
+Queue
+	FIFO algorithm
+
+Elements are added at the tail
+Elements are removed from the head
+	
+Sender/Publisher
+	Stop the production completely
+	Throttle the producer - (reject the message from sender)
+
+Dead Letter Queue
+	is the one where all lost messages from entire broker will move
+	so that it can be used for reporting/documentation purposes 
+	in the future
+
+
+What if there is no consumer coming to this queue for next 5 days.
+Then what about memory ulilization/wastage?????
+You must go for Lazy Queue. Lazy queues keep their messages in Disk.
+Messages are paged out to disk. Messages are still transient.
+Benefit --- Saving lots of RAM space.
+Risk -- these queues are slow coz writing from RAM to DISK and reading
+	back from DISK to RAM means lots of IO operations and IO is
+	very costly always in terms of performance.
+
+Scenerio ---
+1) Use LAzy mode - Slow Consumers
+2) Do Not Use LAzy mode - Fast Consumers
+
+Use Case 
+	Each day you have to create 20 exchanges
+	Each day you have to create 150 queues
+	Every queue should have some common featuere like expiry,priority,dlx,
+	quotolimit etc
+
+Policy is the solution for this repeation of admin work 
+
+
+Virtual Host 
+	is used to provide abstraction layer among multiple customer 
+	applications deployed on the broker node
+
+Use Case 1)
+	On same Rabbit MQ Broker, You have to manage 2 different customer
+	applications where each application has 20-30 exchanges and 120-400 queues
+	and 50-60 policies each app etc.....	
+
