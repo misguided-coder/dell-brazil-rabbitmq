@@ -24,7 +24,7 @@ RabbitMQ Plugins
 	Sovel
 	Federation 
 
-Manage RabbitMQ from UI Dashborad/CLI/Configuration files
+Manage RabbitMQ from UI Dashborad/CLI/Configuration files/REST API
 Log Management
 Fine Tuning
 

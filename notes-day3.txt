@@ -1,0 +1,15 @@
+ Users in RabbitMQ belongs to broker directly. They have no relation 
+to any virtual host so as such they are broker level users. If you
+delete all virtual host still users will be existing inside broker.
+
+Level 1 Access (virtual host) --- High Level Access Control
+User must be allowed access to a virtual host.
+
+3 types of permissions exist under RabbitMQ.
+
+Level 2 Access (Fine Grained Access Control)
+Resource Level Configurations (exchange,queue)
+
+configure ----- can do create and delete operations
+write  ------- can do write operations on exchanges and queues
+read --------- can do read operations on exchanges and queues

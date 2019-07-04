@@ -1,0 +1,84 @@
+    add_user <username> <password>
+    add_vhost <vhost>
+    authenticate_user <username> <password>
+    await_online_nodes <count> [-t <timeout>]
+    cancel_sync_queue [-p <vhost>] queue
+    change_cluster_node_type <disc|ram>
+    change_password <username> <password>
+    clear_global_parameter <key>
+    clear_operator_policy [-p <vhost>] <key>
+    clear_parameter [-p <vhost>] <component_name> <key>
+    clear_password <username>
+    clear_permissions [-p vhost] <username>
+    clear_policy [-p <vhost>] <key>
+    clear_topic_permissions [-p vhost] <username> [<exchange>]
+    clear_vhost_limits [-p <vhost>]
+    close_all_connections [-p <vhost> --limit <limit>] [-n <node> --global] [--per-connection-delay <delay>] <explanation>
+    close_connection <connectionpid> <explanation>
+    cluster_status
+    decode value passphrase [--cipher cipher] [--hash hash] [--iterations iterations]
+    delete_queue queue_name [--if_empty|-e] [--if_unused|-u] [-t <timeout>]
+    delete_user <username>
+    delete_vhost <vhost>
+    encode value passphrase [--cipher cipher] [--hash hash] [--iterations iterations]
+    environment
+    eval <expr>
+    exec <expr> [--offline]
+    force_boot
+    force_reset
+    forget_cluster_node [--offline] <existing_cluster_member_node>
+    help <command>
+    hipe_compile <directory>
+    join_cluster [--disc|--ram] <existing_cluster_member_node>
+    list_bindings [-p <vhost>] [<bindinginfoitem> ...] [-t <timeout>]
+    list_channels [<channelinfoitem> ...]
+    list_ciphers
+    list_connections [<connectioninfoitem> ...] [-t <timeout>]
+    list_consumers [-p vhost] [<consumerinfoitem> ...] [-t <timeout>]
+    list_exchanges [-p <vhost>] [<exchangeinfoitem> ...] [-t <timeout>]
+    list_global_parameters [-t <timeout>]
+    list_hashes
+    list_operator_policies [-p <vhost>] [-t <timeout>]
+    list_parameters [-p <vhost>] [-t <timeout>]
+    list_permissions [-p <vhost>] [-t <timeout>]
+    list_policies [-p <vhost>] [-t <timeout>]
+    list_queues [-p <vhost>] [--online] [--offline] [--local] [<queueinfoitem> ...] [-t <timeout>]
+    list_topic_permissions [-p <vhost>] [-t <timeout>]
+    list_unresponsive_queues [--local] [--queue-timeout <queue-timeout>] [<unresponsiveq_ueueinfoitem> ...] [-t <timeout>]
+    list_user_permissions <username> [-t <timeout>]
+    list_user_topic_permissions <username> [-t <timeout>]
+    list_users [-t <timeout>]
+    list_vhost_limits [-p <vhost>] [--global]
+    list_vhosts [<vhostinfoitem> ...] [-t <timeout>]
+    node_health_check [-t <timeout>]
+    ping [-t <timeout>]
+    purge_queue <queue> [-t <timeout>]
+    rename_cluster_node <oldnode1> <newnode1> [oldnode2] [newnode2] ...
+    report
+    reset
+    restart_vhost [-p <vhost>] [-t <timeout>]
+    rotate_logs
+    set_cluster_name <name>
+    set_disk_free_limit <disk_limit>
+    set_disk_free_limit mem_relative <fraction>
+    set_global_parameter <name> <value>
+    set_operator_policy [-p <vhost>] [--priority <priority>] [--apply-to <apply-to>] <name> <pattern> <definition>
+    set_parameter [-p <vhost>] <component_name> <name> <value>
+    set_permissions [-p <vhost>] <username> <conf> <write> <read>
+    set_policy [-p <vhost>] [--priority <priority>] [--apply-to <apply-to>] <name> <pattern> <definition>
+    set_topic_permissions [-p <vhost>] <username> <exchange> <write_pattern> <read_pattern>
+    set_user_tags <username> <tag> [...]
+    set_vhost_limits [-p <vhost>] <definition>
+    set_vm_memory_high_watermark <fraction>
+    set_vm_memory_high_watermark absolute <value>
+    shutdown
+    start_app
+    status
+    stop [<pidfile>]
+    stop_app
+    sync_queue [-p <vhost>] queue
+    trace_off [-p <vhost>]
+    trace_on [-p <vhost>]
+    update_cluster_nodes <existing_cluster_member_node_to_seed_from>
+    wait [<pid_file>] [--pid|-P <pid>] [-t <timeout>]
+
