@@ -1,0 +1,52 @@
+Scalability (UP/OUT/DOWN)
+
+4 broker instances either running locally or on different machines.
+
+cluster of brokers (Clustering)
+	for 2 reasons
+		Load Balancing (HA)
+		Fail Over (HA)
+
+Sender/Receiver --- this cluster will behave like just one single node
+
+Client SLA --- No matter what messaging application must be up and 	       running 100%.
+
+Clustering Policies
+
+Diffrerent-Diffrerent varities of scenerios while doing testing of 
+clustered brokers.
+
+Scenerio 1) Whether cluster was highly availbale or not???
+Scenerio 2) Sender sending to node 1 and receiver receiving from 
+	    node 2 (LB)
+Scenerio 3) Sender sending to node 1 and receiver receiving from 
+	    node 2 while node 1 was down (FailOver)
+Scenerio 4) One of the node in the cluster is already down and 
+	    senders are sending messages to other nodes.
+            When already down node will come up whether 
+	    it will be in sync or not????
+Scenerio 5) If number of members in cluster are 20 so not advisable
+            to choose HA-MODE=all. 
+	    Better is to go for primary and secondary group.
+
+
+Same Physical Machine/Hardware
+
+IP/Host will be same
+Port has to be different
+AMQP --- 5672 used by the broker
+HTTP --- 15672 used by the UI dashboard
+
+RabbitMQ broker has a name which is by default "rabbit" --- Node Name
+Change Node Name also
+
+Cluster having 20 nodes
+
+	Primary group - 3 nodes
+	Secondry group - 17 nodes
+
+In any case , is there a chance that entire cluster is down 
+means each node is down????
+
+Forming a cluster does not mean that your application 
+is highly available (HA).
